@@ -40,9 +40,10 @@ import in.kncsolutions.dhelm.gfeed.models.StrikePriceResponse;
 import in.kncsolutions.dhelm.gfeed.models.SubscribeRealTimeResponse;
 import in.kncsolutions.dhelm.gfeed.models.SubscribeSnapshotResponse;
 import in.kncsolutions.dhelm.gfeed.models.UserProfile;
-
 /**
-*
+*It is a java client library to access and integrate stock market data from Global Financial Datafeeds LLP with your application.
+*To use this library you must subscribe to websocket api with Global Financial Datafeeds LLP and get your API key and websocket 
+*endpoint url.
 */
 public class GfeedClient{
 public String endPoint;

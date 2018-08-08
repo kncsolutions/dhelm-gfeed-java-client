@@ -81,7 +81,6 @@ public class SubscribedExchanges {
 	private void parseExchangeList(String message){
 		Gson gson = new GsonBuilder().create();
 		this.exchangeList=gson.fromJson(message, ExchangeList.class);
-		Constants.EXCHANGE_LIST=this.exchangeList;
 		if(Constants.DEBUG_MODE) {
 		  System.out.println("Message : "+exchangeList.message);
 		  if(exchangeList.exchanges!=null) {

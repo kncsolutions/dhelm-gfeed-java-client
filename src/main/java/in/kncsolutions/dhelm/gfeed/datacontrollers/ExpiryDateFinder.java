@@ -153,7 +153,7 @@ public class ExpiryDateFinder {
 			System.out.println("List of  expiry dates for this exchange.."+this.exchange);
 			if(this.response.dates!=null)
 				for(int i=0;i<this.response.dates.size();i++) {
-					System.out.println(this.response.dates.get(i).expirydate);
+					System.out.print(this.response.dates.get(i).expirydate+"\t");
 				}
 		}
 		isResultPrepared=true;

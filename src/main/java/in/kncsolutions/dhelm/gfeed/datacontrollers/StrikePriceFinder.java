@@ -152,10 +152,10 @@ public class StrikePriceFinder {
 		Gson gson = new GsonBuilder().create();
       this.response=gson.fromJson(message, StrikePriceResponse.class);
       if(Constants.DEBUG_MODE) {
-			System.out.println("List of option types this exchange.."+this.exchange);
+			System.out.println("==================List of Strike Prices============");
 			if(this.response.prices!=null)
 				for(int i=0;i<this.response.prices.size();i++) {
-					System.out.println(this.response.prices.get(i).strikeprice);
+					System.out.print(this.response.prices.get(i).strikeprice+"\t");
 				}
 		}
 		isResultPrepared=true;

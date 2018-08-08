@@ -93,7 +93,7 @@ public class SearchInstruments {
 		private void parseInstrumentList(String message){
 			Gson gson = new GsonBuilder().create();
 			this.instrumentresponse=gson.fromJson(message, InstrumentResponse.class);
-			Constants.ALL_INSTRUMENTS.add(this.instrumentresponse);
+			//Constants.ALL_INSTRUMENTS.add(this.instrumentresponse);
 			if(Constants.DEBUG_MODE) {
 				System.out.println("===============SEARCH RESULT : List of  instruments=====================");
 				if(this.instrumentresponse.instruments!=null)

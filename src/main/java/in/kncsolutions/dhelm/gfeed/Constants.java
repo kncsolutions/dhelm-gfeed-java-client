@@ -21,79 +21,79 @@ public class Constants {
     *The functions
     */
    /**
-    *1. End point to do the authentication. 
+    *End point to do the authentication. 
     */
    public static String AUTHENTICATE="Authenticate";
    /**
-    *2. End point to get the subscribe exchanges. 
+    *End point to get the subscribe exchanges. 
     */
    public static String GET_EXCHANGES="GetExchanges";
    /**
-    *3. End point to get the instruments for an exchange. 
+    *End point to get the instruments for an exchange. 
     */
    public static String GET_INSTRUMENTS="GetInstruments";
    /**
-    *4. End point to get the instruments for an exchange on search with a search key word. 
+    *End point to get the instruments for an exchange on search with a search key word. 
     */
    public static String GET_INSTRUMENTS_ON_SEARCH="GetInstrumentsOnSearch";
    /**
-    *5. End point to get the last quote of an instrument. 
+    *End point to get the last quote of an instrument. 
     */
    public static String GET_LAST_QUOTE="GetLastQuote";
    /**
-    *6. End point to get the last quote of a set of instruments in a single call. 
+    *End point to get the last quote of a set of instruments in a single call. 
     */
    public static final String GET_LAST_QUOTE_ARRAY="GetLastQuoteArray";
    /**
-    *7. End point to get the snapshot of a set of instruments in a single call. 
+    *End point to get the snapshot of a set of instruments in a single call. 
     */
    public static final String GET_SNAPSHOT="GetSnapshot";
    /**
-    *8. End point to get the historical data. 
+    *End point to get the historical data. 
     */
    public static final String GET_HISTORY="GetHistory";
    /**
-    *9. End point to get the instrument types. 
+    *End point to get the instrument types. 
     */
    public static final String GET_INSTRUMENT_TYPES="GetInstrumentTypes";
    /**
-    *10. End point to get the product types. 
+    *End point to get the product types. 
     */
    public static final String GET_PRODUCTS="GetProducts";
    /**
-    *11. End point to get  expiry dates. 
+    *End point to get  expiry dates. 
     */
    public static final String GET_EXPIRY_DATES="GetExpiryDates";
    /**
-    *12. End point to get option types. 
+    *End point to get option types. 
     */
    public static final String GET_OPTION_TYPES="GetOptionTypes";
    /**
-    *13. End point to get the strike types. 
+    *End point to get the strike types. 
     */
    public static final String GET_STRIKE_PRICES="GetStrikePrices";
    /**
-    *14. End point to get the account details. 
+    *End point to get the account details. 
     */
    public static final String GET_LIMITATION="GetLimitation";
    /**
-    *15. End point to get the server information. 
+    *End point to get the server information. 
     */
    public static final String GET_SERVER_INFO="GetServerInfo";
    /**
-    *16. End point to get the market message. 
+    *End point to get the market message. 
     */
    public static final String GET_MARKET_MESSAGES="GetMarketMessages";
    /**
-    *17. End point to get the exchange message. 
+    *End point to get the exchange message. 
     */
    public static final String GET_EXCHANGE_MESSAGES="GetExchangeMessages";
    /**
-    *18. End point for real time subscription. 
+    *End point for real time subscription. 
     */
    public static final String SUBSCRIBE_REALTIME="SubscribeRealtime";
    /**
-    *18. End point for snapshot subscription. 
+    *End point for snapshot subscription. 
     */
    public static final String SUBSCRIBE_SNAPSHOT="SubscribeSnapshot";
  
@@ -128,9 +128,9 @@ public class Constants {
    */
    public static final String HISTORY_OHLC_RESULT_TYPE="HistoryOHLCResult"; 
    public static final String HISTORY_TICK_RESULT_TYPE="HistoryTickResult";
-   
+   /**
+   *Set it false to stop debug mode.
+   */
 	public static boolean DEBUG_MODE=true;
-	public static ExchangeList EXCHANGE_LIST;
-	public static List<InstrumentResponse> ALL_INSTRUMENTS
-	              =new ArrayList<InstrumentResponse>();
+	
 }

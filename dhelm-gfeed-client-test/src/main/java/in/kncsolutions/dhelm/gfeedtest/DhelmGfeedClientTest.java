@@ -33,7 +33,9 @@ public class DhelmGfeedClientTest{
       //Get list of subscribed exchanges.
 		ExchangeList l=gc.getSubscribedExchanges();
 		Thread.sleep(3000);
-		//ExchangeList l=Constants.EXCHANGE_LIST;
+      for(int i=0;i<l.exchanges.size();i++) {
+        System.out.println(l.exchanges.get(i).exchange);
+      }
 		for(int i=0;i<l.exchanges.size();i++) {
 		   Thread.sleep(5000);
 		   InstrumentTypesResponse response=gc.getInstumentTypes(l.exchanges.get(i).exchange);

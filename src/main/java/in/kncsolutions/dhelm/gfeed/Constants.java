@@ -135,6 +135,8 @@ public class Constants {
    */
    public static final String HISTORY_OHLC_RESULT_TYPE="HistoryOHLCResult"; 
    public static final String HISTORY_TICK_RESULT_TYPE="HistoryTickResult";
+   public static final String INSTRUMENT_RESULT_RESPONSE="InstrumentsResult";
+   public static final String INSTRUMENT_SEARCH_RESULT_RESPONSE="InstrumentsOnSearchResult";
    /**
    *Set it false to stop debug mode.
    */

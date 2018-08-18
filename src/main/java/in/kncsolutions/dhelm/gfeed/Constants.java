@@ -114,7 +114,7 @@ public class Constants {
    public static final String EXPIRY_DATE_KEY="Expiry";
    public static final String OPTION_TYPE_KEY="OptionType";
    public static final String STRIKE_PRICE_KEY="StrikePrice";
-   public static final String PERIODICTY_KEY="Periodicity";
+   public static final String PERIODICITY_KEY="Periodicity";
    public static final String UNSUBSCRIBE_KEY="Unsubscribe";
    public static final String PERIOD_KEY="Period";
    public static final String FROM_KEY="From";
@@ -137,6 +137,9 @@ public class Constants {
    public static final String HISTORY_TICK_RESULT_TYPE="HistoryTickResult";
    public static final String INSTRUMENT_RESULT_RESPONSE="InstrumentsResult";
    public static final String INSTRUMENT_SEARCH_RESULT_RESPONSE="InstrumentsOnSearchResult";
+   public static final String LAST_QUOTE_RESULT_MESSAGE="LastQuoteResult";
+   public static final String LAST_QUOTE_ARRAY_RESULT_MESSAGE="LastQuoteArrayResult";
+   public static final String SNAPSHOT_RESULT_MESSAGE="SnapshotResult";
    /**
    *Set it false to stop debug mode.
    */

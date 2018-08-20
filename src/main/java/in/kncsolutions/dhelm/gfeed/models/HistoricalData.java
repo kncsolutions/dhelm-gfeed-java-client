@@ -1,8 +1,18 @@
-/*
- *HistoricalData.java
- *v1.0.0
- *Copyright (C) 2018 KNC SOLUTIONS PVT. LTD.
- */
+/**
+*Copyright 2018 Knc Solutions Private Limited
+*
+*Licensed under the Apache License, Version 2.0 (the "License");
+*you may not use this file except in compliance with the License.
+*You may obtain a copy of the License at
+*
+*http://www.apache.org/licenses/LICENSE-2.0
+*
+*Unless required by applicable law or agreed to in writing, software
+*distributed under the License is distributed on an "AS IS" BASIS,
+*WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+*See the License for the specific language governing permissions and
+*limitations under the License.
+*/
 package in.kncsolutions.dhelm.gfeed.models;
 
 import java.text.SimpleDateFormat;
@@ -42,7 +52,7 @@ public class HistoricalData {
 	/**
 	 *@return Returns last traded date-time. 
 	 */
-	public String getLastTradedTime() {
+	public String getDateTime() {
 		Date date = new Date(this.lastTradeTime*1000L); 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss"); 
 		//sdf.setTimeZone(java.util.TimeZone.getTimeZone("GMT+5:30")); 
@@ -52,7 +62,7 @@ public class HistoricalData {
 	@Override
 	public String toString() {
 		String s="";
-		if(this.getLastTradedTime()!=null)s=s+this.getLastTradedTime()+"-";
+		if(this.getLastTradedTime()!=null)s=s+this.getDateTime()+"-";
 		s=s+"LastTradePrice : "+this.ltp;
 		s=s+"QuotationLot : "+this.quotationLot+"-";
 		s=s+"TradedQty : "+this.volume+"-";

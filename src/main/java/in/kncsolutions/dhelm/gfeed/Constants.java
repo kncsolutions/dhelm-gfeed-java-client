@@ -135,11 +135,17 @@ public class Constants {
    */
    public static final String HISTORY_OHLC_RESULT_TYPE="HistoryOHLCResult"; 
    public static final String HISTORY_TICK_RESULT_TYPE="HistoryTickResult";
+   public static final String EXCHANGE_RESULT_MESSAGE="ExchangesResult";
    public static final String INSTRUMENT_RESULT_RESPONSE="InstrumentsResult";
    public static final String INSTRUMENT_SEARCH_RESULT_RESPONSE="InstrumentsOnSearchResult";
    public static final String LAST_QUOTE_RESULT_MESSAGE="LastQuoteResult";
    public static final String LAST_QUOTE_ARRAY_RESULT_MESSAGE="LastQuoteArrayResult";
    public static final String SNAPSHOT_RESULT_MESSAGE="SnapshotResult";
+   public static final String INSTRUMENT_TYPES_RESULT_MESSAGE="InstrumentTypesResult";
+   public static final String PRODUCT_RESULT_MESSAGE="ProductsResult";
+   public static final String EXPIRY_DATE_RESULT_MESSAGE="ExpiryDatesResult";
+   public static final String OPTION_TYPE_RESULT_MESSAGE="OptionTypesResult";
+   public static final String STRIKE_PRICES_RESULT_MESSAGE="StrikePricesResult";
    /**
    *Set it false to stop debug mode.
    */

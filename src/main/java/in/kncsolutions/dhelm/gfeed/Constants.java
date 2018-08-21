@@ -147,6 +147,7 @@ public class Constants {
    public static final String OPTION_TYPE_RESULT_MESSAGE="OptionTypesResult";
    public static final String STRIKE_PRICES_RESULT_MESSAGE="StrikePricesResult";
    public static final String USER_PROFILE_LIMITATION_MESSAGE="LimitationResult";
+   public static final String MARKET_MESSAGES_ITEM_RESULT_MESSAGE="MarketMessagesItemResult";
 
    /**
    *Set it false to stop debug mode.

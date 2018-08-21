@@ -149,6 +149,8 @@ public class Constants {
    public static final String USER_PROFILE_LIMITATION_MESSAGE="LimitationResult";
    public static final String MARKET_MESSAGES_ITEM_RESULT_MESSAGE="MarketMessagesItemResult";
    public static final String MARKET_MESSAGES_RESULT_MESSAGE="MarketMessagesResult";
+   public static final String EXCHANGE_MESSAGES_ITEM_RESULT_MESSAGE="ExchangeMessagesItemResult";
+   public static final String EXCHANGE_MESSAGES_RESULT_MESSAGE="ExchangeMessagesResult";
 
    /**
    *Set it false to stop debug mode.

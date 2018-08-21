@@ -152,7 +152,7 @@ public class Constants {
    public static final String EXCHANGE_MESSAGES_ITEM_RESULT_MESSAGE="ExchangeMessagesItemResult";
    public static final String EXCHANGE_MESSAGES_RESULT_MESSAGE="ExchangeMessagesResult";
    public static final String REAL_TIME_RESULT_MESSAGE="RealtimeResult";
-
+   public static final String REAL_TIME_SNAPSHOT_RESULT_MESSAGE="RealtimeSnapshotResult";
    /**
    *Set it false to stop debug mode.
    */

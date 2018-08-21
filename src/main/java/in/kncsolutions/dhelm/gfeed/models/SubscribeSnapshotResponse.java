@@ -16,7 +16,7 @@ public class SubscribeSnapshotResponse {
     @SerializedName("InstrumentIdentifier")  
     public String instrumentIdentifier;
     @SerializedName("Periodicity")
-	public double periodicity;
+	public String periodicity;
     @SerializedName("LastTradeTime")
     public long lastTradeTime;
     @SerializedName("TradedQty")

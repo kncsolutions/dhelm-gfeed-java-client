@@ -25,6 +25,10 @@ If you use MAVEN as build tool you can directly integrate the library in your pr
   <version>1.0.0-SNAPSHOT</version>
 </dependency>
 ```
+Alternatively you can download the jar from [here](https://github.com/kncsolutions/dhelm-gfeed-client/releases) and integrate it in your classpath.
+
+
 
 If you have any query raise an [issue](https://github.com/kncsolutions/dhelm-gfeed-client/issues) or email at developer@kncsolutions.in.
+To know about dhelm project visit our project website at https://dhelm.kncsolutions.in
 

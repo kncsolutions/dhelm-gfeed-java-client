@@ -5,7 +5,7 @@ To use this library you must [subscribe](https://globaldatafeeds.in/api/) to web
 
 If java is your favorite language for stock market data analysis, then using Dhelm-gfeed-client you can plug data from web socket api into your application directly.
 
-For detailed integration and usage guidelines, please read through the [wiki](https://github.com/kncsolutions/dhelm-gfeed-client/wiki).
+**For detailed integration and usage guidelines, please read through the [wiki](https://github.com/kncsolutions/dhelm-gfeed-client/wiki).**
 ## Required Java version
 Java 1.8 or higher is required.
 ## How to run the test file

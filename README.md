@@ -17,6 +17,14 @@ and<br/>
 _**<API_KEY>**_ with the api key which you have got at the time of subscription.<br/>
 
 ## How to integrate with your project
+If you use MAVEN as build tool you can directly integrate the library in your project. Add the following dependency:<br/>
+```xml
+<dependency>
+  <groupId>in.kncsolutions.dhelm.gfeed</groupId>
+  <artifactId>dhelm-gfeed-client</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+</dependency>
+```
 
 If you have any query raise an [issue](https://github.com/kncsolutions/dhelm-gfeed-client/issues) or email at developer@kncsolutions.in.
 

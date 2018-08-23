@@ -156,6 +156,6 @@ public class Constants {
    /**
    *Set it false to stop debug mode.
    */
-	public static boolean DEBUG_MODE=true;
+	public static boolean DEBUG_MODE=false;
 	
 }

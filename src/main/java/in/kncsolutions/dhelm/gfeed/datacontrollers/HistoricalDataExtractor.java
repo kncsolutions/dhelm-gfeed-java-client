@@ -159,8 +159,8 @@ public class HistoricalDataExtractor {
 		jobj.put("MessageType", this.instance);
 		jobj.put("Exchange", this.exchange);
 		jobj.put("InstrumentIdentifier", this.instrumentIdentifier);
-        if(optionalParameters.containsKey(Constants.PERIODICTY_KEY)) {
-           jobj.put(Constants.PERIODICTY_KEY,optionalParameters.get(Constants.PERIODICTY_KEY));
+        if(optionalParameters.containsKey(Constants.PERIODICITY_KEY)) {
+           jobj.put(Constants.PERIODICITY_KEY,optionalParameters.get(Constants.PERIODICITY_KEY));
         }
         if(optionalParameters.containsKey(Constants.PERIOD_KEY)) {
             jobj.put(Constants.PERIOD_KEY,Integer.parseInt(optionalParameters.get(Constants.PERIOD_KEY)));

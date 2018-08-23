@@ -1,8 +1,18 @@
-/*
- *QuoteSnapshotFinder.java
- *v1.0.0
- *Copyright (C) 2018 KNC SOLUTIONS PVT. LTD.
- */
+/**
+*Copyright 2018 Knc Solutions Private Limited
+*
+*Licensed under the Apache License, Version 2.0 (the "License");
+*you may not use this file except in compliance with the License.
+*You may obtain a copy of the License at
+*
+*http://www.apache.org/licenses/LICENSE-2.0
+*
+*Unless required by applicable law or agreed to in writing, software
+*distributed under the License is distributed on an "AS IS" BASIS,
+*WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+*See the License for the specific language governing permissions and
+*limitations under the License.
+*/
 package in.kncsolutions.dhelm.gfeed.datacontrollers;
 
 import java.util.Map;
@@ -133,8 +143,8 @@ public class QuoteSnapshotFinder {
 			ja.put(tmp);
 		}
 		jobj.put("InstrumentIdentifiers", ja);
-		if(optionalParams.containsKey(Constants.PERIODICTY_KEY))
-			 jobj.put(Constants.PERIODICTY_KEY, optionalParams.get(Constants.PERIODICTY_KEY));
+		if(optionalParams.containsKey(Constants.PERIODICITY_KEY))
+			 jobj.put(Constants.PERIODICITY_KEY, optionalParams.get(Constants.PERIODICITY_KEY));
 		if(optionalParams.containsKey(Constants.PERIOD_KEY))
 			 jobj.put(Constants.PERIOD_KEY, Integer.parseInt(optionalParams.get(Constants.PERIOD_KEY)));
   		if(Constants.DEBUG_MODE) {

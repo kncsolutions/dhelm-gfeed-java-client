@@ -25,6 +25,7 @@ public class DhelmGfeedClientTest{
   *
   */
   public DhelmGfeedClientTest(String url,String apikey){
+  Constants.DEBUG_MODE=true;
   //Create an instance of the GfeedClient class.
   GfeedClient gc=new GfeedClient(url,
 			apikey);
@@ -56,7 +57,7 @@ public class DhelmGfeedClientTest{
       gc.getSearchedInstruments("NSE", "SBIN");
       Thread.sleep(3000);
       Map<String,String> ophist=new HashMap<String,String>();
-      ophist.put(Constants.PERIODICTY_KEY, Constants.PERIODICITY_DAY);
+      ophist.put(Constants.PERIODICITY_KEY, Constants.PERIODICITY_DAY);
       ophist.put(Constants.FROM_KEY, "2017-06-04");
       ophist.put(Constants.TO_KEY, "2018-08-04");
       gc.getHistoricalData("NSE", "SBIN", ophist);
@@ -79,7 +80,7 @@ public class DhelmGfeedClientTest{
       gc.getQutoteSnapshot("NSE", scrp);
       Thread.sleep(3000);
       Map<String,String> opq=new HashMap<String,String>();
-      opq.put(Constants.PERIODICTY_KEY, Constants.PERIODICITY_HOUR);
+      opq.put(Constants.PERIODICITY_KEY, Constants.PERIODICITY_HOUR);
       opq.put(Constants.PERIOD_KEY, "1");
       gc.getQutoteSnapshot("NSE", scrp,opq);
       InstrumentResponse ir=gc.getAllInstruments(l.exchanges.get(3).exchange);

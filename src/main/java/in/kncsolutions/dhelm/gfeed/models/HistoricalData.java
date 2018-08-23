@@ -62,7 +62,7 @@ public class HistoricalData {
 	@Override
 	public String toString() {
 		String s="";
-		if(this.getLastTradedTime()!=null)s=s+this.getDateTime()+"-";
+		if(this. getDateTime()!=null)s=s+this.getDateTime()+"-";
 		s=s+"LastTradePrice : "+this.ltp;
 		s=s+"QuotationLot : "+this.quotationLot+"-";
 		s=s+"TradedQty : "+this.volume+"-";

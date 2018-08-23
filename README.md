@@ -7,5 +7,15 @@ If java is your favorite language for stock market data analysis, then using Dhe
 
 For detailed integration and usage guidelines, please read through the [wiki](https://github.com/kncsolutions/dhelm-gfeed-client/wiki).
 
+## How to run the test file
+Clone the repository.Navigate to the dhelm-gfeed-client/dhelm-gfeed-client-test/target folder.
+From the command line run the following command:<br/>
+java -jar dhelm-gfeedtest-1.0.0-launcher.jar <WEB_SOKET_URL> <API_KEY><br/>
+where you should replace<br/>
+<WEB_SOKET_URL> with the web socket url<br/>
+and<br/>
+<API_KEY> with the api key which you have got at the time of subscription.<br/>
+
+
 If you have any query raise an [issue](https://github.com/kncsolutions/dhelm-gfeed-client/issues) or email at developer@kncsolutions.in.
 

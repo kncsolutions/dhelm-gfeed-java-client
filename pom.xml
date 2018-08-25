@@ -9,7 +9,7 @@
   <packaging>jar</packaging>
   <name>dhelm-gfeed-client</name>
   <description>
-      Dhelm-gfeed-client is a client library to access web socket api data provided by Global Financial Datafeeds LLP.
+      Dhelm-gfeed-client is a java client library to access web socket api data provided by Global Financial Datafeeds LLP.
   </description>
   <url>https://github.com/kncsolutions/dhelm-gfeed-client</url>
   

@@ -1,4 +1,4 @@
-Dhelm-gfeed-client is a java client library to access and integrate stock market data from  
+Dhelm-gfeed-java-client is a java client library to access and integrate stock market data from  
 [Global Financial Datafeeds LLP](https://globaldatafeeds.in/) with your application.
 
 To use this library you must [subscribe](https://globaldatafeeds.in/api/) to web socket api with Global Financial Datafeeds LLP and get your API key and web socket endpoint URL. Programmatic access to data obviously provides better control over your algorithm. You access the raw data from your data provider, then feed into your own application and do whatever analysis you want.

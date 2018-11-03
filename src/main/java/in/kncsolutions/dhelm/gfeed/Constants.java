@@ -20,6 +20,8 @@ import java.util.List;
 
 import in.kncsolutions.dhelm.gfeed.models.ExchangeList;
 import in.kncsolutions.dhelm.gfeed.models.InstrumentResponse;
+import in.kncsolutions.dhelm.gfeed.models.SubscribeRealTimeResponse;
+import in.kncsolutions.dhelm.gfeed.models.SubscribeSnapshotResponse;
 /**
  *
  */
@@ -157,5 +159,13 @@ public class Constants {
    *Set it false to stop debug mode.
    */
 	public static boolean DEBUG_MODE=false;
+   /**
+   *SubscribeRealTimeResponse
+   */
+   public static SubscribeRealTimeResponse REAL_TIME_RESPONSE;
+   /**
+   *
+   */
+   public static SubscribeSnapshotResponse SNAPSHOT_RESPONSE;
 	
 }

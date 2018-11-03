@@ -23,7 +23,7 @@ If you use MAVEN as build tool you can directly integrate the library in your pr
 <dependency>
   <groupId>in.kncsolutions.dhelm.gfeed</groupId>
   <artifactId>dhelm-gfeed-client</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 Alternatively you can download the jar from [here](https://github.com/kncsolutions/dhelm-gfeed-client/releases) and integrate it in your classpath.

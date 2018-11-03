@@ -39,7 +39,8 @@ public class SubscribeSnapshot {
 	private String periodicity;
 	private boolean responseReceived=false;
 	private boolean isResultPrepared=false;
-    private SubscribeSnapshotResponse response;
+   private SubscribeSnapshotResponse response;
+   private OnSnapshotDataArrival onSnapshotDataArrival;
   /**
    *@param clientEndPoint : The clientendPoint
    *@param exchange : The exchange.
@@ -63,6 +64,62 @@ public class SubscribeSnapshot {
 				this.periodicity=periodicity;
 			}
 			subscribe();			
+	}
+   /**
+   *@param clientEndPoint : The clientendPoint
+   *@param exchange : The exchange.
+   *@param instrumentIdentifier : The identifier-identifier for the instrument.
+   *@param periodicity : The valid periodicity.
+   *@param onSnapshotDataArrival : The callback for snapshot data message arrival
+   */
+	public SubscribeSnapshot(GfeedWSClientEndPoint clientEndPoint,String exchange,
+			String instrumentIdentifier,String periodicity,OnSnapshotDataArrival onSnapshotDataArrival) {
+			if(clientEndPoint.getSocket()==null) {
+				try {
+					throw new DataException();
+				} catch (DataException e) {
+					e.printStackTrace();
+				}
+			}
+			else if(clientEndPoint.getSocket()!=null) {
+				ws=clientEndPoint.getSocket();
+				this.instance=Constants.SUBSCRIBE_SNAPSHOT;
+				this.exchange=exchange;
+				this.instrumentIdentifier=instrumentIdentifier;
+				this.periodicity=periodicity;
+            this.onSnapshotDataArrival=onSnapshotDataArrival;
+			}
+			subscribe();			
+	}
+
+   /**
+	*@param clientEndPoint : The clientendPoint
+    *@param exchange : The exchange.
+    *@param instrumentIdentifier : The identifier-identifier for the instrument.
+    *@param periodicity : The valid periodicity.
+    *@param optionalParameters : The valid optional parameters.
+    *@param onSnapshotDataArrival : The callback for snapshot data message arrival
+	*/
+	public SubscribeSnapshot(GfeedWSClientEndPoint clientEndPoint,
+                         String exchange,String instrumentIdentifier,
+                         String periodicity,Map<String,Boolean> optionalParameters,
+                         OnSnapshotDataArrival onSnapshotDataArrival) {
+			if(clientEndPoint.getSocket()==null) {
+				try {
+					throw new DataException();
+				} catch (DataException e) {
+					e.printStackTrace();
+				}
+			}
+			else if(clientEndPoint.getSocket()!=null) {
+				ws=clientEndPoint.getSocket();
+				this.instance=Constants.SUBSCRIBE_SNAPSHOT;
+				this.exchange=exchange;
+				this.instrumentIdentifier=instrumentIdentifier;
+				this.periodicity=periodicity;
+            this.onSnapshotDataArrival=onSnapshotDataArrival;
+			}
+			subscribe(optionalParameters);			
 	}
    /**
 	*@param clientEndPoint : The clientendPoint
@@ -90,6 +147,7 @@ public class SubscribeSnapshot {
 			}
 			subscribe(optionalParameters);			
 	}
+
   /**
 	* 
 	*/
@@ -106,6 +164,7 @@ public class SubscribeSnapshot {
 			    			 if(Constants.DEBUG_MODE)
 			    			     System.out.println(message);
 			                 parseResponse(message);
+                      responseReceived=false;
 			    		 }
 			    	  }
 			    	 }
@@ -129,6 +188,7 @@ public class SubscribeSnapshot {
 			    			 if(Constants.DEBUG_MODE)
 			    			      System.out.println(message);
 			                 parseResponse(message);
+                      responseReceived=false;
 			    		 }
 			    	  }
 			    	 }
@@ -175,10 +235,14 @@ public class SubscribeSnapshot {
 	private void parseResponse(String message){
 		Gson gson = new GsonBuilder().create();
         this.response=gson.fromJson(message, SubscribeSnapshotResponse.class);
+        Constants.SNAPSHOT_RESPONSE=this.response;
+        if(onSnapshotDataArrival != null) {
+           onSnapshotDataArrival.onSnapshotdataArrival(Constants.SNAPSHOT_RESPONSE);
+        }
         if(Constants.DEBUG_MODE) {
 			System.out.println("=================REAL TIME SNAPSHOT====================");
 			if(this.response!=null)
-				       System.out.println(this.response.toString());		
+				       System.out.println(Constants.SNAPSHOT_RESPONSE.toString());		
 	    }
 		isResultPrepared=true;
 

@@ -4,8 +4,8 @@
   <groupId>in.kncsolutions.dhelm.gfeed</groupId>
   <artifactId>dhelm-gfeed-client</artifactId>
   <name>dhelm-gfeed-client</name>
-  <version>1.0.0-SNAPSHOT</version>
-  <description>Dhelm-gfeed-client is a client library to access web socket api data provided by Global Financial Datafeeds LLP.</description>
+  <version>1.0.0</version>
+  <description>Dhelm-gfeed-client is a java client library to access web socket api data provided by Global Financial Datafeeds LLP.</description>
   <url>https://github.com/kncsolutions/dhelm-gfeed-client</url>
   <developers>
     <developer>

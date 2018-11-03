@@ -33,6 +33,8 @@ import in.kncsolutions.dhelm.gfeed.datacontrollers.SubscribeSnapshot;
 import in.kncsolutions.dhelm.gfeed.datacontrollers.SubscribedExchanges;
 import in.kncsolutions.dhelm.gfeed.datacontrollers.AllInstruments;
 import in.kncsolutions.dhelm.gfeed.datacontrollers.UserProfileFinder;
+import in.kncsolutions.dhelm.gfeed.datacontrollers.OnRealtimeDataArrival;
+import in.kncsolutions.dhelm.gfeed.datacontrollers.OnSnapshotDataArrival;
 import in.kncsolutions.dhelm.gfeed.models.ExchangeList;
 import in.kncsolutions.dhelm.gfeed.models.ExchangeMessageResponse;
 import in.kncsolutions.dhelm.gfeed.models.ExpiryDateResponse;
@@ -378,6 +380,7 @@ public SubscribeRealTimeResponse getRealTimeData(String exchange,String instrume
 	        		    exchange,instrumentIdentifier);
 	return sbsr.getResponse();
 }
+
 /**
 *@param exchange : The exchange. Valid values are from the list of exchanges you get by calling the
 *'getSubscribedExchanges()' function.
@@ -394,6 +397,34 @@ public SubscribeRealTimeResponse getRealTimeData(String exchange,String instrume
   		    exchange,instrumentIdentifier,optionalParams);
     return sbsr.getResponse();
 }
+/**
+*@param exchange : The exchange. Valid values are from the list of exchanges you get by calling the
+*'getSubscribedExchanges()' function.
+*@param instrumentIdentifier : The  instrument identifier for which the  quote
+*have to be found.
+*@param onRealtimeDataArrival : The callback for real time data message arrival.
+*/
+public void streamRealTimeData(String exchange,String instrumentIdentifier,OnRealtimeDataArrival onRealtimeDataArrival) {
+	SubscribeRealTime sbsr
+	          =new SubscribeRealTime(this.clientEndPoint,
+	        		    exchange,instrumentIdentifier,onRealtimeDataArrival);
+}
+
+/**
+*@param exchange : The exchange. Valid values are from the list of exchanges you get by calling the
+*'getSubscribedExchanges()' function.
+*@param instrumentIdentifier : The  instrument identifier for which the  quote
+*have to be found.
+*@param optionalParams : the optional parameters.
+*@param onRealtimeDataArrival : The callback for real time data message arrival.
+*/
+public void streamRealTimeData(String exchange,String instrumentIdentifier,
+		 Map<String,Boolean> optionalParams,OnRealtimeDataArrival onRealtimeDataArrival) {
+	SubscribeRealTime sbsr
+              =new SubscribeRealTime(this.clientEndPoint,
+  		    exchange,instrumentIdentifier,optionalParams,onRealtimeDataArrival);
+}
+
 /**
 *@param exchange : The exchange. Valid values are from the list of exchanges you get by calling the
 *'getSubscribedExchanges()' function.
@@ -426,6 +457,35 @@ public SubscribeSnapshotResponse getRealTimeSnapshotData(String exchange,String 
               =new SubscribeSnapshot(this.clientEndPoint,
   		    exchange,instrumentIdentifier,periodicity,optionalParams);
     return sbsr.getResponse();
+}
+/**
+*@param exchange : The exchange. Valid values are from the list of exchanges you get by calling the
+*'getSubscribedExchanges()' function.
+*@param instrumentIdentifier : The  instrument identifier for which the  quote
+*have to be found.
+*@param periodicity : Valid values are from {"MINUTE","HOUR"}.
+*@param onSnapshotDataArrival : The callback for snapshot data message arrival
+*/
+public void streamRealTimeSnapshotData(String exchange,String instrumentIdentifier,
+		String periodicity,OnSnapshotDataArrival onSnapshotDataArrival) {
+	SubscribeSnapshot sbsr
+	          =new SubscribeSnapshot(this.clientEndPoint,
+	        		    exchange,instrumentIdentifier,periodicity,onSnapshotDataArrival);
+}
+/**
+*@param exchange : The exchange. Valid values are from the list of exchanges you get by calling the
+*'getSubscribedExchanges()' function.
+*@param instrumentIdentifier : The  instrument identifier for which the  quote
+*have to be found.
+*@param periodicity : Valid values are from {"MINUTE","HOUR"}.
+*@param optionalParams : the optional parameters.
+*@param onSnapshotDataArrival : The callback for snapshot data message arrival
+*/
+public void streamRealTimeSnapshotData(String exchange,String instrumentIdentifier,
+		String periodicity,Map<String,Boolean> optionalParams,OnSnapshotDataArrival onSnapshotDataArrival) {
+	SubscribeSnapshot sbsr
+	          =new SubscribeSnapshot(this.clientEndPoint,
+	        		    exchange,instrumentIdentifier,periodicity,optionalParams,onSnapshotDataArrival);
 }
 
 /**

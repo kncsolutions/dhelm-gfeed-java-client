@@ -38,7 +38,8 @@ public class SubscribeRealTime {
 	private String instrumentIdentifier;
 	private boolean responseReceived=false;
 	private boolean isResultPrepared=false;
-    private SubscribeRealTimeResponse response;
+   private SubscribeRealTimeResponse response;
+   private OnRealtimeDataArrival onRealtimeDataArrival;
   /**
    *@param clientEndPoint  : The clientEndPoint	 
    *@param exchange : The exchange.
@@ -58,15 +59,67 @@ public class SubscribeRealTime {
 				this.instance=Constants.SUBSCRIBE_REALTIME;
 				this.exchange=exchange;
 				this.instrumentIdentifier=instrumentIdentifier;
+  			}
+			subscribe();			
+	}
+   /**
+   *@param clientEndPoint  : The clientEndPoint	 
+   *@param exchange : The exchange.
+   *@param instrumentIdentifier : The instrument identifier for the instrument.
+   *@param onRealtimeDataArrival : The callback for real time data message arrival
+   */
+	public SubscribeRealTime(GfeedWSClientEndPoint clientEndPoint,String exchange,
+			String instrumentIdentifier,OnRealtimeDataArrival onRealtimeDataArrival) {
+			if(clientEndPoint.getSocket()==null) {
+				try {
+					throw new DataException();
+				} catch (DataException e) {
+					e.printStackTrace();
+				}
+			}
+			else if(clientEndPoint.getSocket()!=null) {
+				ws=clientEndPoint.getSocket();
+				this.instance=Constants.SUBSCRIBE_REALTIME;
+				this.exchange=exchange;
+				this.instrumentIdentifier=instrumentIdentifier;
+            this.onRealtimeDataArrival=onRealtimeDataArrival;
 			}
 			subscribe();			
+	}
+
+   /**
+	*@param clientEndPoint  : The clientEndPoint	 
+	*@param exchange : The exchange.
+	*@param instrumentIdentifier : The instrument identifier for the instrument.
+   *@param optionalParameters : The valid optional parameters.
+   *@param onRealtimeDataArrival : The callback for real time data message arrival
+	*/
+	public SubscribeRealTime(GfeedWSClientEndPoint clientEndPoint,
+                         String exchange,String instrumentIdentifier,
+                         Map<String,Boolean> optionalParameters,
+                         OnRealtimeDataArrival onRealtimeDataArrival) {
+			if(clientEndPoint.getSocket()==null) {
+				try {
+					throw new DataException();
+				} catch (DataException e) {
+					e.printStackTrace();
+				}
+			}
+			else if(clientEndPoint.getSocket()!=null) {
+				ws=clientEndPoint.getSocket();
+				this.instance=Constants.SUBSCRIBE_REALTIME;
+				this.exchange=exchange;
+				this.instrumentIdentifier=instrumentIdentifier;
+            this.onRealtimeDataArrival=onRealtimeDataArrival;
+			}
+			subscribe(optionalParameters);			
 	}
    /**
 	*@param clientEndPoint  : The clientEndPoint	 
 	*@param exchange : The exchange.
 	*@param instrumentIdentifier : The instrument identifier for the instrument.
-    *@param optionalParameters : The valid optional parameters.
-	*/
+   *@param optionalParameters : The valid optional parameters.
+ 	*/
 	public SubscribeRealTime(GfeedWSClientEndPoint clientEndPoint,
                          String exchange,String instrumentIdentifier,
                          Map<String,Boolean> optionalParameters) {
@@ -85,6 +138,7 @@ public class SubscribeRealTime {
 			}
 			subscribe(optionalParameters);			
 	}
+
   /**
 	* 
 	*/
@@ -101,6 +155,7 @@ public class SubscribeRealTime {
 			    			 if(Constants.DEBUG_MODE)
 			    			     System.out.println(message);
 			             parseResponse(message);
+                      responseReceived=false;
 			    		 }
 			    	  }
 			    	 }
@@ -123,7 +178,8 @@ public class SubscribeRealTime {
 			    			 responseReceived=true;
 			    			 if(Constants.DEBUG_MODE)
 			    			     System.out.println(message);
-			                 parseResponse(message);
+			             parseResponse(message);
+                      responseReceived=false;
 			    		 }
 			    	  }
 			    	 }
@@ -168,10 +224,14 @@ public class SubscribeRealTime {
 	private void parseResponse(String message){
 		Gson gson = new GsonBuilder().create();
       this.response=gson.fromJson(message, SubscribeRealTimeResponse.class);
+      Constants.REAL_TIME_RESPONSE=this.response;
+       if(onRealtimeDataArrival != null) {
+           onRealtimeDataArrival.onRealtimedataArrival(Constants.REAL_TIME_RESPONSE);
+       }
       if(Constants.DEBUG_MODE) {
-			System.out.println("List of option types this exchange.."+this.exchange);
+			System.out.println("Real time data..");
 			if(this.response!=null)
-			    System.out.println(this.response.toString());		
+			    System.out.println(Constants.REAL_TIME_RESPONSE.toString());		
 		}
 		isResultPrepared=true;
 

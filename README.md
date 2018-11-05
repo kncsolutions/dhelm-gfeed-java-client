@@ -39,7 +39,7 @@ For smoother streaming of real time data certain changes have been made in versi
 </dependency>
 ```
 For the souce code clone the ***snapshot branch***.
-##Changes
+## Changes
 1. In version 1.0.1-SNAPSHOT, to stream real time data `streamRealTimeData(...)` has been introduced. The `getRealTimeData(..)` method has been phased out. See the usage guide [here](https://github.com/kncsolutions/dhelm-gfeed-java-client/wiki/Subscribe-to-realtime-data#changelog).
 2. To stream snapshot data `streamRealTimeSnapshotData(..)` has been introduced. The `getRealTimeSnapshotData()` method has been phased out.See the usage guide [here](https://github.com/kncsolutions/dhelm-gfeed-java-client/wiki/Subscribe-to-realtime-snapshot-data#changelog).
 

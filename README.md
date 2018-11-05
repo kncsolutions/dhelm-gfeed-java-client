@@ -26,8 +26,18 @@ If you use MAVEN as build tool you can directly integrate the library in your pr
   <version>1.0.0</version>
 </dependency>
 ```
-Alternatively you can download the jar from [here](https://github.com/kncsolutions/dhelm-gfeed-client/releases) and integrate it in your classpath.
 
+Alternatively you can download the jar from [here](https://github.com/kncsolutions/dhelm-gfeed-client/releases) and integrate it in your classpath.
+#Changelog
+For smoother streaming of real time data certain changes have been made in version 1.0.1-SNAPSHOT. To integrate that version, add the following dependency 
+```xml
+<dependency>
+  <groupId>in.kncsolutions.dhelm.gfeed</groupId>
+  <artifactId>dhelm-gfeed-client</artifactId>
+  <version>1.0.1-SNAPSHOT</version>
+</dependency>
+```
+For the souce code clone the ***snashot branch***.
 
 
 If you have any query raise an [issue](https://github.com/kncsolutions/dhelm-gfeed-client/issues) or email at developer@kncsolutions.in.

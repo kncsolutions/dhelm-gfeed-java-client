@@ -5,7 +5,7 @@
   
   <groupId>in.kncsolutions.dhelm.gfeedtest</groupId>
   <artifactId>dhelm-gfeedtest</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <packaging>jar</packaging>
   <name>dhelm-gfeed-client-test</name>
   <description>
@@ -41,7 +41,7 @@
        <dependency>
            <groupId>in.kncsolutions.dhelm.gfeed</groupId>
            <artifactId>dhelm-gfeed-client</artifactId>
-           <version>1.0.0</version>
+           <version>1.0.1-SNAPSHOT</version>
        </dependency>
       </dependencies>
   

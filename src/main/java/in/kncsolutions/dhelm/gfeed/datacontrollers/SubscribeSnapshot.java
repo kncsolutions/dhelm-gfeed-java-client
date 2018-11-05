@@ -41,31 +41,7 @@ public class SubscribeSnapshot {
 	private boolean isResultPrepared=false;
    private SubscribeSnapshotResponse response;
    private OnSnapshotDataArrival onSnapshotDataArrival;
-  /**
-   *@param clientEndPoint : The clientendPoint
-   *@param exchange : The exchange.
-   *@param instrumentIdentifier : The identifier-identifier for the instrument.
-   *@param periodicity : The valid periodicity.
-   */
-	public SubscribeSnapshot(GfeedWSClientEndPoint clientEndPoint,String exchange,
-			String instrumentIdentifier,String periodicity) {
-			if(clientEndPoint.getSocket()==null) {
-				try {
-					throw new DataException();
-				} catch (DataException e) {
-					e.printStackTrace();
-				}
-			}
-			else if(clientEndPoint.getSocket()!=null) {
-				ws=clientEndPoint.getSocket();
-				this.instance=Constants.SUBSCRIBE_SNAPSHOT;
-				this.exchange=exchange;
-				this.instrumentIdentifier=instrumentIdentifier;
-				this.periodicity=periodicity;
-			}
-			subscribe();			
-	}
-   /**
+    /**
    *@param clientEndPoint : The clientendPoint
    *@param exchange : The exchange.
    *@param instrumentIdentifier : The identifier-identifier for the instrument.
@@ -121,33 +97,7 @@ public class SubscribeSnapshot {
 			}
 			subscribe(optionalParameters);			
 	}
-   /**
-	*@param clientEndPoint : The clientendPoint
-    *@param exchange : The exchange.
-    *@param instrumentIdentifier : The identifier-identifier for the instrument.
-    *@param periodicity : The valid periodicity.
-    *@param optionalParameters : The valid optional parameters.
-	*/
-	public SubscribeSnapshot(GfeedWSClientEndPoint clientEndPoint,
-                         String exchange,String instrumentIdentifier,
-                         String periodicity,Map<String,Boolean> optionalParameters) {
-			if(clientEndPoint.getSocket()==null) {
-				try {
-					throw new DataException();
-				} catch (DataException e) {
-					e.printStackTrace();
-				}
-			}
-			else if(clientEndPoint.getSocket()!=null) {
-				ws=clientEndPoint.getSocket();
-				this.instance=Constants.SUBSCRIBE_SNAPSHOT;
-				this.exchange=exchange;
-				this.instrumentIdentifier=instrumentIdentifier;
-				this.periodicity=periodicity;
-			}
-			subscribe(optionalParameters);			
-	}
-
+   
   /**
 	* 
 	*/

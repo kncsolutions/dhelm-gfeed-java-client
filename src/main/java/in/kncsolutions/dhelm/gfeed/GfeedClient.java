@@ -371,37 +371,6 @@ public ExchangeMessageResponse getExchangeMessage(String exchange) {
 *'getSubscribedExchanges()' function.
 *@param instrumentIdentifier : The  instrument identifier for which the  quote
 *have to be found.
-*@return Returns the real time response for the instruments. For the structure of
-*the response see the 'SubscribeRealTimeResponse' model class.
-*/
-public SubscribeRealTimeResponse getRealTimeData(String exchange,String instrumentIdentifier) {
-	SubscribeRealTime sbsr
-	          =new SubscribeRealTime(this.clientEndPoint,
-	        		    exchange,instrumentIdentifier);
-	return sbsr.getResponse();
-}
-
-/**
-*@param exchange : The exchange. Valid values are from the list of exchanges you get by calling the
-*'getSubscribedExchanges()' function.
-*@param instrumentIdentifier : The  instrument identifier for which the  quote
-*have to be found.
-*@param optionalParams : the optional parameters.
-*@return Returns the real time response for the instruments. For the structure of
-*the response see the 'SubscribeRealTimeResponse' model class.
-*/
-public SubscribeRealTimeResponse getRealTimeData(String exchange,String instrumentIdentifier,
-		 Map<String,Boolean> optionalParams) {
-	SubscribeRealTime sbsr
-              =new SubscribeRealTime(this.clientEndPoint,
-  		    exchange,instrumentIdentifier,optionalParams);
-    return sbsr.getResponse();
-}
-/**
-*@param exchange : The exchange. Valid values are from the list of exchanges you get by calling the
-*'getSubscribedExchanges()' function.
-*@param instrumentIdentifier : The  instrument identifier for which the  quote
-*have to be found.
 *@param onRealtimeDataArrival : The callback for real time data message arrival.
 */
 public void streamRealTimeData(String exchange,String instrumentIdentifier,OnRealtimeDataArrival onRealtimeDataArrival) {
@@ -425,39 +394,6 @@ public void streamRealTimeData(String exchange,String instrumentIdentifier,
   		    exchange,instrumentIdentifier,optionalParams,onRealtimeDataArrival);
 }
 
-/**
-*@param exchange : The exchange. Valid values are from the list of exchanges you get by calling the
-*'getSubscribedExchanges()' function.
-*@param instrumentIdentifier : The  instrument identifier for which the  quote
-*have to be found.
-*@param periodicity : Valid values are from {"MINUTE","HOUR"}.
-*@return Returns the real time snapshot response for the instruments. For the structure of
-*the response see the 'SubscribeSnapshotResponse' model class.
-*/
-public SubscribeSnapshotResponse getRealTimeSnapshotData(String exchange,String instrumentIdentifier,
-		String periodicity) {
-	SubscribeSnapshot sbsr
-	          =new SubscribeSnapshot(this.clientEndPoint,
-	        		    exchange,instrumentIdentifier,periodicity);
-	return sbsr.getResponse();
-}
-/**
-*@param exchange : The exchange. Valid values are from the list of exchanges you get by calling the
-*'getSubscribedExchanges()' function.
-*@param instrumentIdentifier : The  instrument identifier for which the  quote
-*have to be found.
-*@param periodicity : Valid values are from {"MINUTE","HOUR"}.
-*@param optionalParams : the optional parameters.
-*@return Returns the real time snapshot  response for the instruments. For the structure of
-*the response see the 'SubscribeSnapshotResponse' model class.
-*/
-public SubscribeSnapshotResponse getRealTimeSnapshotData(String exchange,String instrumentIdentifier,
-		 String periodicity,Map<String,Boolean> optionalParams) {
-	SubscribeSnapshot sbsr
-              =new SubscribeSnapshot(this.clientEndPoint,
-  		    exchange,instrumentIdentifier,periodicity,optionalParams);
-    return sbsr.getResponse();
-}
 /**
 *@param exchange : The exchange. Valid values are from the list of exchanges you get by calling the
 *'getSubscribedExchanges()' function.

@@ -40,28 +40,6 @@ public class SubscribeRealTime {
 	private boolean isResultPrepared=false;
    private SubscribeRealTimeResponse response;
    private OnRealtimeDataArrival onRealtimeDataArrival;
-  /**
-   *@param clientEndPoint  : The clientEndPoint	 
-   *@param exchange : The exchange.
-   *@param instrumentIdentifier : The instrument identifier for the instrument.
-   */
-	public SubscribeRealTime(GfeedWSClientEndPoint clientEndPoint,String exchange,
-			String instrumentIdentifier) {
-			if(clientEndPoint.getSocket()==null) {
-				try {
-					throw new DataException();
-				} catch (DataException e) {
-					e.printStackTrace();
-				}
-			}
-			else if(clientEndPoint.getSocket()!=null) {
-				ws=clientEndPoint.getSocket();
-				this.instance=Constants.SUBSCRIBE_REALTIME;
-				this.exchange=exchange;
-				this.instrumentIdentifier=instrumentIdentifier;
-  			}
-			subscribe();			
-	}
    /**
    *@param clientEndPoint  : The clientEndPoint	 
    *@param exchange : The exchange.
@@ -114,31 +92,7 @@ public class SubscribeRealTime {
 			}
 			subscribe(optionalParameters);			
 	}
-   /**
-	*@param clientEndPoint  : The clientEndPoint	 
-	*@param exchange : The exchange.
-	*@param instrumentIdentifier : The instrument identifier for the instrument.
-   *@param optionalParameters : The valid optional parameters.
- 	*/
-	public SubscribeRealTime(GfeedWSClientEndPoint clientEndPoint,
-                         String exchange,String instrumentIdentifier,
-                         Map<String,Boolean> optionalParameters) {
-			if(clientEndPoint.getSocket()==null) {
-				try {
-					throw new DataException();
-				} catch (DataException e) {
-					e.printStackTrace();
-				}
-			}
-			else if(clientEndPoint.getSocket()!=null) {
-				ws=clientEndPoint.getSocket();
-				this.instance=Constants.SUBSCRIBE_REALTIME;
-				this.exchange=exchange;
-				this.instrumentIdentifier=instrumentIdentifier;
-			}
-			subscribe(optionalParameters);			
-	}
-
+   
   /**
 	* 
 	*/

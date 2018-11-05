@@ -11,7 +11,7 @@ Java 1.8 or higher is required.
 ## How to run the test file
 Clone the repository.Navigate to the dhelm-gfeed-client/dhelm-gfeed-client-test/target folder.
 From the command line run the following command:<br/>
-java -jar dhelm-gfeedtest-1.0.0-launcher.jar <WEB_SOCKET_URL> <API_KEY><br/>
+java -jar dhelm-gfeedtest-1.0.1-launcher.jar <WEB_SOCKET_URL> <API_KEY><br/>
 where you should replace<br/>
 _**<WEB_SOCKET_URL>**_ with the web socket url<br/>
 and<br/>

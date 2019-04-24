@@ -19,6 +19,5 @@ _**<WEB_SOCKET_URL>**_ with the web socket url<br/>
 and<br/>
 _**<API_KEY>**_ with the api key which you have got at the time of subscription.<br/>
 
-[NB: v1.0.1-SNAPSHOT is still under testing phase.]<br/>
 If you have any query raise an [issue](https://github.com/kncsolutions/dhelm-gfeed-client/issues) or email at developer@kncsolutions.in.
 To know about dhelm project visit our project website at https://dhelm.kncsolutions.in

@@ -1,3 +1,5 @@
+No more support will be provided on this package from MAY 01, 2020.
+==================================
 Dhelm-gfeed-java-client is a java client library to access and integrate stock market data from  
 [Global Financial Datafeeds LLP](https://globaldatafeeds.in/) with your application.
 
